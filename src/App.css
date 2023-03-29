@@ -10,25 +10,5 @@
     margin: 0 auto;
 
 }
-.header {
-    grid-area: header;
-    background-color: red;
-}
 
-.header img {
-    width: 50px;
-    mix-blend-mode: multiply;
-}
 
-.nav {
-    grid-area: nav;
-    background-color: beige;
-}
-.content {
-    grid-area: content;
-    background-color: cornflowerblue;
-}
-
-.content img {
-    width: 500px;
-}
