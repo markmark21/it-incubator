@@ -11,13 +11,13 @@ function App() {
     return (
         <div className="app-wrapper">
             <BrowserRouter>
-            <Header/>
-            <Navbar/>
-            <div className='app-wrapper-content'>
-                <Route path='/dialogs' component={Dialogs}/>
-                <Route path='/profile' component={Profile}/>
-                {/*<Profile/>*/}
-            </div>
+                <Header/>
+                <Navbar/>
+                <div className="app-wrapper-content">
+                    <Route path="/dialogs" component={Dialogs}/>
+                    <Route path="/profile" component={Profile}/>
+                    {/*<Profile/>*/}
+                </div>
             </BrowserRouter>
 
 
