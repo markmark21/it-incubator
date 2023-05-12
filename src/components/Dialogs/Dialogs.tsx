@@ -2,7 +2,12 @@ import React from "react";
 import s from "./Dialogs.module.css";
 import {NavLink} from "react-router-dom";
 
-const DialogItems = (props: any) => {
+type DialogItemsPropsType = {
+    name: string
+    id: string
+}
+
+const DialogItems = (props: DialogItemsPropsType) => {
 
     let path = "/dialogs/" + props.id;
     return (
@@ -27,10 +32,13 @@ const Dialogs = () => {
                 <DialogItems name="Dasha" id="3"/>
                 <DialogItems name="Andrey" id="4"/>
                 <DialogItems name="Mark" id="5"/>
+                <DialogItems name="Valera" id="6"/>
             </div>
             <div className={s.messages}>
                 <Message message='Hi'/>
                 <Message message='How are you'/>
+                <Message message='Yo'/>
+                <Message message='Yo'/>
                 <Message message='Yo'/>
             </div>
         </div>
