@@ -4,7 +4,12 @@ import {NavLink} from "react-router-dom";
 
 type DialogItemsPropsType = {
     name: string
-    id: string
+    id: number
+}
+
+type MessageType = {
+    message: string
+    id: number
 }
 
 const DialogItems = (props: DialogItemsPropsType) => {
@@ -17,29 +22,49 @@ const DialogItems = (props: DialogItemsPropsType) => {
     );
 };
 
-const Message = (props: any) => {
+const Message = (props: MessageType) => {
     return (
         <div className={s.dialog}>{props.message}</div>
-    )
-}
+    );
+};
 
 const Dialogs = () => {
+
+    let dialogsData = [
+        {id: 1, name: "Dima"},
+        {id: 2, name: "Lena"},
+        {id: 3, name: "Dasha"},
+        {id: 4, name: "Andrey"},
+        {id: 5, name: "Mark"},
+        {id: 6, name: "Valera"}
+    ];
+    let messagesData = [
+        {id: 1, message: "Hi"},
+        {id: 2, message: "How are you"},
+        {id: 3, message: "Yo"},
+        {id: 4, message: "Yo"},
+        {id: 5, message: "Yo"}
+    ];
+
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
-                <DialogItems name="Dima" id="1"/>
-                <DialogItems name="Lena" id="2"/>
-                <DialogItems name="Dasha" id="3"/>
-                <DialogItems name="Andrey" id="4"/>
-                <DialogItems name="Mark" id="5"/>
-                <DialogItems name="Valera" id="6"/>
+                {
+                    dialogsData.map(dialog => {
+                        return (
+                            <DialogItems name={dialog.name} id={dialog.id}/>
+                        )
+                    })
+                }
             </div>
             <div className={s.messages}>
-                <Message message='Hi'/>
-                <Message message='How are you'/>
-                <Message message='Yo'/>
-                <Message message='Yo'/>
-                <Message message='Yo'/>
+                {
+                    messagesData.map((message) => (
+                        <div key={message.id}>
+                            <Message message={message.message} id={message.id}/>
+                        </div>
+                    ))
+                }
             </div>
         </div>
     );
