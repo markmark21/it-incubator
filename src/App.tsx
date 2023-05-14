@@ -5,9 +5,10 @@ import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/Profile/Profile";
 import Dialogs from "./components/Dialogs/Dialogs";
 import {BrowserRouter, Route} from "react-router-dom";
+import {MyPostsPropsType} from "./components/Profile/MyPosts/MyPosts";
 
 
-function App() {
+function App(props: MyPostsPropsType) {
     return (
         <div className="app-wrapper">
             <BrowserRouter>
@@ -18,7 +19,7 @@ function App() {
                     <Route exact path="/profile" component={Profile}/>*/}
                     
                     <Route exact path="/dialogs" render={()=> <Dialogs />}/>
-                    <Route exact path="/profile" render={()=> <Profile />}/>
+                    <Route exact path="/profile" render={()=> <Profile posts={props.posts} />}/>
 
                 </div>
             </BrowserRouter>
