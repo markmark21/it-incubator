@@ -11,7 +11,7 @@ ReactDOM.render(
     <DevSupport ComponentPreviews={ComponentPreviews}
                 useInitialHook={useInitial}
     >
-        <App appState={state}/>
+        <App state={state}/>
     </DevSupport>,
     document.getElementById("root")
 );
