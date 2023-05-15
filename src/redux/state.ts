@@ -54,7 +54,7 @@ let state: RootStateType = {
             {id: 5, message: "Yo"}
         ],
         dialogs: [
-            {id: 1, name: "Dima"},
+            {id: 1, name: "Dima" },
             {id: 2, name: "Lena"},
             {id: 3, name: "Dasha"},
             {id: 4, name: "Andrey"},

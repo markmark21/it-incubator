@@ -10,6 +10,7 @@ export type MessageType = {
 export type DialogType = {
     id: number,
     name: string
+    avatar: string
 }
 
 export type DialogsType = {
@@ -26,10 +27,9 @@ const Dialogs = (props: DialogsType) => {
                 {
                     props.dialogs.map(dialog => {
                         return (
-                            <div>
-                                <img src="https://www.w3schools.com/howto/img_avatar.png" alt="ava"/>
-                                <DialogItem name={dialog.name} id={dialog.id}/>
-                            </div>
+                                <DialogItem name={dialog.name}
+                                            id={dialog.id}
+                                />
                         );
                     })
                 }
