@@ -26,8 +26,11 @@ const Dialogs = (props: DialogsType) => {
                 {
                     props.dialogs.map(dialog => {
                         return (
-                            <DialogItem name={dialog.name} id={dialog.id}/>
-                        )
+                            <div>
+                                <img src="https://www.w3schools.com/howto/img_avatar.png" alt="ava"/>
+                                <DialogItem name={dialog.name} id={dialog.id}/>
+                            </div>
+                        );
                     })
                 }
             </div>
@@ -42,6 +45,7 @@ const Dialogs = (props: DialogsType) => {
             </div>
         </div>
     );
-};
+}
+    ;
 
-export default Dialogs;
+    export default Dialogs;
