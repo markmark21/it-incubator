@@ -23,17 +23,13 @@ export type DialogPageType = {
     dialogs: DialogType[]
 }
 
-export type SidebarType= {
-
-}
+export type SidebarType = {}
 
 export type RootStateType = {
     profilePage: ProfilePageType
     dialogsPage: DialogPageType
     sidebar: SidebarType
 }
-
-
 
 
 let state: RootStateType = {
@@ -54,7 +50,7 @@ let state: RootStateType = {
             {id: 5, message: "Yo"}
         ],
         dialogs: [
-            {id: 1, name: "Dima" },
+            {id: 1, name: "Dima"},
             {id: 2, name: "Lena"},
             {id: 3, name: "Dasha"},
             {id: 4, name: "Andrey"},
@@ -64,4 +60,14 @@ let state: RootStateType = {
     },
     sidebar: {}
 };
+
+export let addPost = (postMessage: string) => {
+    let newPost = {
+        id: 5,
+        message: postMessage,
+        likesCount: 0
+    };
+    state.profilePage.posts.push(newPost);
+};
+
 export default state;

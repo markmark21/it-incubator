@@ -1,6 +1,7 @@
 import React from "react";
 import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
+import {addPost} from "../../../redux/state";
 
 export type PostsDataType = {
     id: number,
@@ -10,14 +11,16 @@ export type PostsDataType = {
 
 export type MyPostsPropsType = {
     posts: PostsDataType[]
+    addPostCallBack: (message: string) => void;
 }
 
 
 const MyPosts = (props: MyPostsPropsType) => {
     let newPostElement = React.createRef<HTMLTextAreaElement>();
     const addPost = () => {
-        let text = newPostElement.current?.value;
-    };
+        props.addPostCallBack(newPostElement.current ? newPostElement.current.value : '----')
+    }
+
 
     return (
         <div className={s.postsBlock}>
