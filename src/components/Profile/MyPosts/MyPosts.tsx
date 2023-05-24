@@ -12,6 +12,7 @@ export type MyPostsPropsType = {
     posts: PostsDataType[]
 }
 
+
 const MyPosts = (props: MyPostsPropsType) => {
     let newPostElement = React.createRef<HTMLTextAreaElement>();
     const addPost = () => {
