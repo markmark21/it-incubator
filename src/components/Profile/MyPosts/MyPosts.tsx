@@ -18,7 +18,13 @@ export type MyPostsPropsType = {
 const MyPosts = (props: MyPostsPropsType) => {
     let newPostElement = React.createRef<HTMLTextAreaElement>();
     const addPost = () => {
-        props.addPostCallBack(newPostElement.current ? newPostElement.current.value : '----')
+        if(newPostElement.current?.value.trim() !== '') {
+            props.addPostCallBack(newPostElement.current ? newPostElement.current.value : '----')
+        }
+    }
+
+    const onPostChange = () => {
+
     }
 
 
@@ -28,7 +34,7 @@ const MyPosts = (props: MyPostsPropsType) => {
                 <h3>My posts</h3>
                 <div>
                     <div>
-                        <textarea ref={newPostElement}></textarea>
+                        <textarea onChange={onPostChange} ref={newPostElement} value={''} />
                     </div>
                     <div>
                         <button onClick={addPost}>Add post</button>
