@@ -9,7 +9,7 @@ const Profile = (props: any) => {
         <div>
             <div className={s.content}>
                 <ProfileInfo/>
-                <MyPosts posts={props.posts} />
+                <MyPosts posts={props.posts} addPostCallBack={props.addPost} />
             </div>
         </div>
     );
