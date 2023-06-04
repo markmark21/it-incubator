@@ -17,6 +17,7 @@ export type PostType = {
 
 
 export type ProfilePageType = {
+    newPostText: string
     posts: PostType[]
 }
 
@@ -42,7 +43,7 @@ let state: RootStateType = {
             {id: 3, message: "Blabla", likesCount: 11},
             {id: 4, message: "Dada", likesCount: 11},
         ],
-
+        newPostText: 'it-kamasutra'
     },
     dialogsPage: {
         messages: [

@@ -12,6 +12,7 @@ export type PostsDataType = {
 export type MyPostsPropsType = {
     posts: PostsDataType[]
     addPostCallBack: (message: string) => void;
+    message: string
 }
 
 
@@ -19,7 +20,7 @@ const MyPosts = (props: MyPostsPropsType) => {
     let newPostElement = React.createRef<HTMLTextAreaElement>();
     const addPost = () => {
         if(newPostElement.current?.value.trim() !== '') {
-            props.addPostCallBack(newPostElement.current ? newPostElement.current.value : '----')
+            props.addPostCallBack(props.message)
         }
     }
 
@@ -34,7 +35,7 @@ const MyPosts = (props: MyPostsPropsType) => {
                 <h3>My posts</h3>
                 <div>
                     <div>
-                        <textarea onChange={onPostChange} ref={newPostElement} value={''} />
+                        <textarea onChange={onPostChange} value={props.message} />
                     </div>
                     <div>
                         <button onClick={addPost}>Add post</button>
